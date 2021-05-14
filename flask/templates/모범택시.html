@@ -1,10 +1,25 @@
-<!DOCTYPE html>
-<html>
-<body>
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Findrama app</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+  
+
+</head>
+<body id= "all_body" >
+  
+
     <header>
         <nav>
-          <a href="/">Home</a>
-          <a href="/about">About</a>
+          <div  style ="display:inline; color:#FDC000; font-family: 'Oswald',sans-serif; font-size: 30px; margin-left:10px ; margin-right:50px">Findrama</div>
+          <a href="/"  text-decoration:none><div style = "display:inline; margin-right:10px; color:	rgba(255,255,255,0.9); font-family: 'Roboto Condensed',sans-serif">Home</div></a>
+          <a href="/about"  text-decoration:none ><div style="display:inline; color:rgba(255,255,255,0.9); font-family: 'Roboto Condensed'">About</div></a>
         </nav>
         <hr>
       </header>
