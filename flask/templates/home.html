@@ -5,7 +5,6 @@
 
   <title>Findrama app</title>
 
-  <link rel="icon" href="/favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"/>
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -18,8 +17,8 @@
 
     <header>
         <nav>
-          <div  style ="display:inline; color:#FDC000; font-family: 'Oswald'; font-size: 30px; margin-left:10px ; margin-right:50px">Findrama</div>
-          <a href="/"  text-decoration:none><div style = "display:inline; margin-right:10px; color:	rgba(255,255,255,0.9); font-family: 'Roboto Condensed'">Home</div></a>
+          <div  style ="display:inline; color:#FDC000; font-family: 'Oswald',sans-serif; font-size: 30px; margin-left:10px ; margin-right:50px">Findrama</div>
+          <a href="/"  text-decoration:none><div style = "display:inline; margin-right:10px; color:	rgba(255,255,255,0.9); font-family: 'Roboto Condensed',sans-serif">Home</div></a>
           <a href="/about"  text-decoration:none ><div style="display:inline; color:rgba(255,255,255,0.9); font-family: 'Roboto Condensed'">About</div></a>
         </nav>
         <hr>
@@ -31,7 +30,7 @@
         드라마 평가
     </div>
 
-    <div style="line-height:1 ; font-family:'Oswald',sans-serif; font-size:30px; margin: 30px 0; color:rgba(255,255,255,0.5); margin-left:30px ">
+    <div style="line-height:1 ; font-family:'Roboto Condensed',sans-serif; font-size:30px; margin: 30px 0; color:rgba(255,255,255,0.5); margin-left:30px ">
       <p>
         드라마 리스트를 보여주는 Home페이지와 각각의 드라마 페이지와 팀에대한 About 페이지로 구성되어 있다.
       </p>
@@ -40,6 +39,19 @@
       </p>
     </div>
 
+    <div style="display:inline; font-family: Roboto ,sans-serif ; margin-left:30px ">
+    
+      <a href="/빈센조" text-decoration:none><img src="{{ url_for('static', filename='css/bin_poster.jpg') }}" /></a>
+      빈센조
+    
+    </div>
+
+    <div style="display:inline; font-family: Roboto ,sans-serif ; margin-left:30px ">
+    
+      <a href="/모범택시" text-decoration:none><img src="{{ url_for('static', filename='css/taxi_poster.jpg') }}" /></a>
+      모범택시
+    
+    </div>
 
 </body>
 </html>
