@@ -1,0 +1,25 @@
+CREATE OR REPLACE TABLE drama(
+	id integer NOT NULL PRIMARY KEY, 
+	title VARCHAR(100),
+	chanel VARCHAR(20),
+	start_date VARCHAR(20),
+	day VARCHAR(30),
+	img_url VARCHAR(300),
+	plot VARCHAR(300));
+
+CREATE OR REPLACE TABLE actor(
+	id integer,
+	role_name VARCHAR(20),
+	actor_name VARCHAR(20),
+	FOREIGN KEY(id) REFERENCES drama(id));
+
+CREATE OR REPLACE TABLE drama_talks(
+	id integer,
+	nick_name VARCHAR(20),
+	talk VARCHAR(100),
+	FOREIGN KEY(id) REFERENCES drama(id));	
+
+ALTER TABLE drama CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+ALTER TABLE actor CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+ALTER TABLE drama_talks CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
