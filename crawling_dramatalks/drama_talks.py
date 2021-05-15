@@ -4,10 +4,8 @@ from bs4 import BeautifulSoup
 import urllib
 import pymysql
 
-
-#drama talks
-#ex) cjenm , myulmang
-def search_talks_into_db(drama_chanel, drama_name):
+def search_talks_into_db(index,drama_chanel, drama_name):
+    count = 0
     # Open database connection
     db = pymysql.connect(host='localhost', port=3306, user='findrama', passwd='findrama', db='findrama', charset='utf8',
                          autocommit=True)
@@ -18,10 +16,12 @@ def search_talks_into_db(drama_chanel, drama_name):
     url = 'https://tv.naver.com/'+drama_chanel+'.'+ drama_name +'/talks'
     driver.get(url)
     time.sleep(3)  # 웹 페이지 로드를 보장하기 위해 3초 쉬기
-    # 댓글 데이터베이스에 삽입
-    while True:
+
+    # 댓글 데이터베이스에 삽입 (임의로 100개)
+    while count <= 2:
         idx = 4
         for j in range(5):
+
             text = driver.page_source
             soup = BeautifulSoup(text, 'html.parser')
 
@@ -33,16 +33,14 @@ def search_talks_into_db(drama_chanel, drama_name):
                     continue
 
                 # execute SQL query using execute() method.
-                sql = "insert into myulmang_talks values (" + "'" + nickname + "'" + "," + "'" + talk + "'" + ")"
+                sql = "insert into drama_talks values ("+str(index) + ",'" + nickname + "'" + "," + "'" + talk + "'" + ")"
+                print(count ,sql)
+
                 try:
                     cursor.execute(sql)
                 except:
                     continue
-
-                # l.append([nickname,talk])
-                #print(nickname, ' :  ', talk)
-            #page = 5 * i + j + 1
-            #print('page:', page, ' --------------------------------', idx)
+                print(nickname, ' :  ', talk)
             select = '#cbox_module_talk > div > div.u_cbox_paginate > div > a:nth-child(' + str(idx) + ')'
             try:
                 button = driver.find_elements_by_css_selector(select)[0]
@@ -51,5 +49,4 @@ def search_talks_into_db(drama_chanel, drama_name):
             button.click()
             idx += 1
             time.sleep(3)
-#사용 예시
-#search_talks_into_db('cjenm', 'myulmang')
+            count += 1
