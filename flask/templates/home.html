@@ -15,7 +15,7 @@
 <body id= "all_body" >
   
 
-    <header>
+    <header style="display:fixed">
         <nav>
           <div  style ="display:inline; color:#FDC000; font-family: 'Oswald',sans-serif; font-size: 30px; margin-left:10px ; margin-right:50px">Findrama</div>
           <a href="/"  text-decoration:none><div style = "display:inline; margin-right:10px; color:	rgba(255,255,255,0.9); font-family: 'Roboto Condensed',sans-serif">Home</div></a>
@@ -30,13 +30,6 @@
         드라마 평가
     </div>
 
-    <ul>
-      {% for t in resultData %}
-      <li>{{ t }}</li>
-      {% endfor %}
-    </ul>
-
-
     <div style="line-height:1 ; font-family:'Roboto Condensed',sans-serif; font-size:30px; margin: 30px 0; color:rgba(255,255,255,0.5); margin-left:30px ">
       <p>
         드라마 리스트를 보여주는 Home페이지와 각각의 드라마 페이지와 팀에대한 About 페이지로 구성되어 있다.
@@ -48,18 +41,19 @@
 
     <div style="display:inline-block; font-family: Roboto ,sans-serif ; margin-left:30px ">
     
-      <a href="/빈센조" text-decoration:none><img src="https://search.pstatic.net/common?type=o&size=150x214&quality=90&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20210423_140%2F1619158964643J19nw_JPEG%2F57_18052618_poster_image_1619158964617.jpg" /></a><br/>
-      <center>{{  resultData  }}</center>
+      <a href="/이미테이션" text-decoration:none><img src="{{ url_for('static', filename='css/Imitation_poster.jpg') }}" /></a><br/>
+      <center>이미테이션</center>
     
     </div>
 
     <div style="display:inline-block; font-family: Roboto ,sans-serif ; margin-left:30px ">
     
       <a href="/모범택시" text-decoration:none><img src="{{ url_for('static', filename='css/taxi_poster.jpg') }}" /></a><br/>
-      <center>{}</center>
+      <center>모범택시</center>
     
     </div>
 
 </body>
 </html>
+
 
