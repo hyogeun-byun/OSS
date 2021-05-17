@@ -10,9 +10,9 @@ def home():
 def mo():
      return render_template('모범택시.html', title='모범택시')
 
-@app.route('/빈센조')
+@app.route('/이미테이션')
 def bin():
-     return render_template('빈센조.html', title='빈센조')
+     return render_template('이미테이션.html', title='이미테이션')
 
 @app.route('/about')
 def about():
