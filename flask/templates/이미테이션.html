@@ -20,18 +20,10 @@
 
   <header>
     <nav>
-      <div
-        style="display:inline; color:#FDC000; font-family: 'Oswald',sans-serif; font-size: 30px; margin-left:10px ; margin-right:50px">
-        Findrama</div>
-      <a href="/" text-decoration:none>
-        <div
-          style="display:inline; margin-right:10px; color:   rgba(255,255,255,0.9); font-family: 'Roboto Condensed',sans-serif">
-          Home</div>
-      </a>
-      <a href="/about" text-decoration:none>
-        <div style="display:inline; color:rgba(255,255,255,0.9); font-family: 'Roboto Condensed'">About</div>
-      </a>
-    </nav>
+          <div  style ="display:inline; color:#FDC000; font-family: 'Oswald',sans-serif; font-size: 30px; margin-left:10px ; margin-right:30px;font-size:35px;">Findrama</div>
+          <a href="/"  text-decoration:none><div style = "display:inline; margin-right:10px; color:	rgba(255,255,255,0.9); font-family: 'Roboto Condensed',sans-serif; font-size:25px;">Home</div></a>
+          <a href="/about"  text-decoration:none ><div style="display:inline; color:rgba(255,255,255,0.9); font-family: 'Roboto Condensed';font-size:25px;">About</div></a>
+        </nav>
     <hr>
   </header>
 
@@ -42,17 +34,18 @@
     <!-- top container 위쪽 상단 드라마 내용 부분 -->
     <div style="display:inline-block; font-size:x-large ;font-family: 'Jua' ,sans-serif  ">
       <!-- 드라마 사진 부분 ( 왼쪽 ) -->
-      <img src="{{ url_for('static', filename='css/Imitation_poster.jpg') }}" align="left" hspace="80" />
-      제목 : 이미테이션
-
+      <img src="{{ resultData['img_url']}}" align="left" hspace="80" width = "400" height="480" />
+      제목 : {{ resultData['title'] }} <br/>
       <!-- 드라마 내용 삽입 (오른쪽)-->
 
-      <p style="margin-top:100px ; margin-bottom: 100px ;">줄거리 : 연예고시 100만시대, 짝퉁이지만 그래도 ‘진짜’를 꿈꾼다!<br />
-        아이돌이라 칭하지만, 결국 이 시대 젊은 청춘들의 현실 자화상인 무대 위의 별들.
-        그들에게 닥친 미스터리한 사건, 그리고 느닷없이 다가온 사랑의 감정을 겪으며
-        진정한 ‘진짜’ 나를 찾고, ‘진짜’ 나에게 토닥임을 주는 공감 드라마 </p>
+      <p style="margin-top:50px ; margin-bottom: 40px ;">{{ resultData['plot'] }}</p>
 
-      <p>등장인물 : 이준영, 정지소, 박지연, 정윤호 외</p>
+      <p>등장인물 </p>
+      <p>
+        {% for i in range(8) %}
+          {{actor[i]['role_name']}} : {{actor[i]['actor_name']}},
+        {% endfor %}
+      <p/>
 
     </div>
 
