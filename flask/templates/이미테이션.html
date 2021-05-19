@@ -29,21 +29,21 @@
 
 
   <!-- 전체적으로 가운데 정렬 시키기 -->
-  <div style="width :80% ; margin:0 auto; padding-bottom:10% ; margin-top:80px;">
+  <div style="width :90% ; margin:0 auto; padding-bottom:10% ; margin-top:80px;">
 
     <!-- top container 위쪽 상단 드라마 내용 부분 -->
     <div style="display:inline-block; font-size:x-large ;font-family: 'Jua' ,sans-serif  ">
       <!-- 드라마 사진 부분 ( 왼쪽 ) -->
       <img src="{{ resultData['img_url']}}" align="left" hspace="80" width = "400" height="480" />
-      제목 : {{ resultData['title'] }} <br/>
+       <p style = "font-size:60px;">{{ resultData['title'] }} <p/>
       <!-- 드라마 내용 삽입 (오른쪽)-->
 
-      <p style="margin-top:50px ; margin-bottom: 40px ;">{{ resultData['plot'] }}</p>
+      <p style="margin-top:30px ; margin-bottom: 40px ;">    {{ resultData['plot'] }}</p>
 
-      <p>등장인물 </p>
+      <p style = "font-size:30px;">등장인물 </p>
       <p>
         {% for i in range(8) %}
-          {{actor[i]['role_name']}} : {{actor[i]['actor_name']}},
+          {{actor[i]['role_name']}} : {{actor[i]['actor_name']}} ,
         {% endfor %}
       <p/>
 
