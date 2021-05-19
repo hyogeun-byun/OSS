@@ -25,8 +25,7 @@ def search_info_to_db(idex,drama_name):
     plot = soup.find('span', class_='desc _text').text
     plot = plot.replace('\'','')
     img = soup.find('div',class_='detail_info')
-    img_url = soup.find('img').get('src')
-
+    img_url = img.find('img').get('src')
     url = "https://search.naver.com/search.naver?query=" + drama_name + "+등장인물"
     html = requests.get(url, headers=headers).text
     soup = BeautifulSoup(html, 'html.parser')
