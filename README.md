@@ -19,6 +19,7 @@
 <br/>
 
 ## 📁 프로젝트 구조
+![image](https://user-images.githubusercontent.com/69452161/119333969-80c67100-bcc5-11eb-905e-46a563c13bb9.png)
 
 <br/>
 
