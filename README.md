@@ -15,7 +15,10 @@
 * 이정은 : 데이터 수집(crawling), 데이터베이스 모델링 , Flask(Python) 
 
 ## 🧰 기능
-*작성필요
+* 현재 방영중인 드라마 기본 정보 확인
+* 드라마별 댓글 확인
+* 댓글 감정 인식을 통한 드라마에 대한 평가 확인
+* 드라마의 댓글을 통한 wordcloud 확인 가능
 <br/>
 
 ## 📁 프로젝트 구조
@@ -24,6 +27,7 @@
 <br/>
 
 ## 💻 화면
+![image](https://user-images.githubusercontent.com/69452161/119460638-dbb9a000-bd79-11eb-8df3-3a62f15a21ac.png)
 
 <br/>
 
