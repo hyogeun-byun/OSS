@@ -49,6 +49,9 @@ Total
 
 ## 💻 화면
 ![image](https://user-images.githubusercontent.com/69452161/119460638-dbb9a000-bd79-11eb-8df3-3a62f15a21ac.png)
+![image](https://user-images.githubusercontent.com/69452161/120106981-1a948f00-c19a-11eb-9c5d-f0ac3e396b64.png)
+![image](https://user-images.githubusercontent.com/69452161/120106997-27b17e00-c19a-11eb-9974-837d425d8806.png)
+![image](https://user-images.githubusercontent.com/69452161/120107015-3730c700-c19a-11eb-80f1-3ba027e93974.png)
 
 <br/>
 
