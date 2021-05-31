@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+
+  <title>Findrama app</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+
+</head>
+
+<body id="all_body">
+
+
+  <header>
+    <nav>
+      <div
+        style="display:inline; color:#FDC000; font-family: 'Oswald',sans-serif; font-size: 30px; margin-left:10px ; margin-right:50px">
+        Findrama</div>
+      <a href="/" text-decoration:none>
+        <div
+          style="display:inline; margin-right:10px; color:   rgba(255,255,255,0.9); font-family: 'Roboto Condensed',sans-serif">
+          Home</div>
+      </a>
+      <a href="/about" text-decoration:none>
+        <div style="display:inline; color:rgba(255,255,255,0.9); font-family: 'Roboto Condensed'">About</div>
+      </a>
+    </nav>
+    <hr>
+  </header>
+
+
+  <!-- 전체적으로 가운데 정렬 시키기 -->
+  <div style="width :80% ; margin:0 auto; padding-bottom:10% ; margin-top:80px;">
+
+    <!-- top container 위쪽 상단 드라마 내용 부분 -->
+    <div style="display:inline-block; font-size:x-large ;font-family: 'Jua' ,sans-serif  ">
+      <!-- 드라마 사진 부분 ( 왼쪽 ) -->
+      <img src="{{ url_for('static', filename='css/Imitation_poster.jpg') }}" align="left" hspace="80" />
+      제목 : 이미테이션
+
+      <!-- 드라마 내용 삽입 (오른쪽)-->
+
+      <p style="margin-top:100px ; margin-bottom: 100px ;">줄거리 : 연예고시 100만시대, 짝퉁이지만 그래도 ‘진짜’를 꿈꾼다!<br />
+        아이돌이라 칭하지만, 결국 이 시대 젊은 청춘들의 현실 자화상인 무대 위의 별들.
+        그들에게 닥친 미스터리한 사건, 그리고 느닷없이 다가온 사랑의 감정을 겪으며
+        진정한 ‘진짜’ 나를 찾고, ‘진짜’ 나에게 토닥임을 주는 공감 드라마 </p>
+
+      <p>등장인물 : 이준영, 정지소, 박지연, 정윤호 외</p>
+
+    </div>
+
+    <!-- bottom container 아래쪽 하단 드라마 분석 부분 -->
+    <!--<div style=" margin-top: 50px; margin-left:150px; margin-right:200px ;border:1px soild #bcbcbc; border-radius: 5px; width: px; ; margin:0 auto ">
+    -->
+    <div
+      style="position:relative; margin-top: 80px; width:100%; height:1000px; border:3px solid #bcbcbc; border-radius: 5px ;font-family: 'Jua' ,sans-serif ;">
+      <!-- 드라마 분석중 왼쪽 위 ( 댓글 예시 ) -->
+      <div style=" position:absolute ; top : 3% ; width: 44% ; height: 91%; margin-left:35px;   border-radius: 25px;
+      border: 2px solid #fff; ">
+        <center>
+          <h1>예시 댓글 모음</h1>
+        </center>
+
+        <!--
+          {% for i in range(10) %}
+          <li> {{chat[i]}} </li>
+          <div style="font-size: small;">{{predict[i]}}</div>
+          {% endfor %}
+
+          <div> 총 정확도는 : <h1>{{sum}}%</h1> </div>
+
+        -->
+
+      </div>
+
+      <!-- 드라마 분석중 오른쪽 위 ( wordcloud )-->
+      <div style=" position:absolute ; top: 3% ; left:51% ;  width:46% ; height: 40%;   border-radius: 25px;
+      border: 2px solid #fff; ">
+        <center>
+          <h1>워드 클라우드</h1>
+        </center>
+        <!--
+          <img src="./static/wordcloud/wordcloud_0.png" width="480" height="360">
+        -->
+      </div>
+
+      <!-- 드라마 분석중 아래 (그래프 , 평점)-->
+      <div style="position:absolute ; top: 50%; left: 51%; width: 46% ; height: 45%;   border-radius: 25px;
+      border: 2px solid #fff; ">
+        <center>
+          <h1>평가</h1>
+        </center>
+
+        <div
+          style="display: inline-block; width:300px ; height:300px ; margin-left:25px; background: conic-gradient(#73EEB2 0% 50%,  #FFA2AD 50% 100% ); border-radius: 50%;">
+        </div>
+
+        <div
+          style="position:absolute ; top: 30%; left: 350px ; width: (100%-100px) ; height: 100px ; font-size: 15px ;">
+          <div style="font-size: x-large;">
+            긍정 : 50% <br /><br />
+            부정 : 50% <br /><br />
+            평점 : A or B or C or D <br /><br /><br />
+          </div>
+          <div style="display: inline-block; width:15px; height:15px ; background-color: #73EEB2;"> </div> 긍정
+          <div style="display: inline-block; width:15px; height:15px ; background-color: #FFA2AD;"> </div> 부정
+          <!-- 
+            <div style="display: inline-block; width:300px ; height:300px ; margin-left:25px; background: conic-gradient(#73EEB2 0% {{pos}}%,  #FFA2AD {{neg}}% 100% ); border-radius: 50%;">
+            </div>
+        
+        <div style="position:absolute ; top: 30%; left: 350px ; width: (100%-100px) ; height: 100px ; font-size: 15px ;">
+          <div style="font-size: x-large;">
+            긍정 : {{pos}}% <br/><br/>
+            부정 : {{neg}}% <br/><br/>
+            평점 : A or B or C or D <br/><br/><br/> 평점은 75프로 이상 긍정이면 A / 60~75 : B / 45~ 60: C / 그이하 D (긍정확률만 뽑아내죠)
+          </div>
+          <div style="display: inline-block; width:15px; height:15px ; background-color: #73EEB2;">  </div> 긍정
+          <div style="display: inline-block; width:15px; height:15px ; background-color: #FFA2AD;">  </div> 부정
+          -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+ 
+</html>

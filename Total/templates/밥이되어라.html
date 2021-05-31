@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+
+  <title>Findrama app</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+
+</head>
+
+<body id="all_body">
+
+
+  <header>
+    <nav>
+          <div  style ="display:inline; color:#FDC000; font-family: 'Oswald',sans-serif; font-size: 30px; margin-left:10px ; margin-right:30px;font-size:35px;">Findrama</div>
+          <a href="/"  text-decoration:none><div style = "display:inline; margin-right:10px; color:	rgba(255,255,255,0.9); font-family: 'Roboto Condensed',sans-serif; font-size:25px;">Home</div></a>
+          <a href="/about"  text-decoration:none ><div style="display:inline; color:rgba(255,255,255,0.9); font-family: 'Roboto Condensed';font-size:25px;">About</div></a>
+        </nav>
+    <hr>
+  </header>
+
+
+  <!-- 전체적으로 가운데 정렬 시키기 -->
+  <div style="width :80% ; margin:0 auto; padding-bottom:10% ; margin-top:80px;">
+
+    <!-- top container 위쪽 상단 드라마 내용 부분 -->
+    <div style="display:inline-block; font-size:x-large ;font-family: 'Jua' ,sans-serif  ">
+      <!-- 드라마 사진 부분 ( 왼쪽 ) -->
+      <img src="{{ resultData['img_url']}}" align="left" hspace="80" width = "400" height="480" />
+      제목 : {{ resultData['title'] }} <br/>
+      <!-- 드라마 내용 삽입 (오른쪽)-->
+
+      <p style="margin-top:50px ; margin-bottom: 40px ;">{{ resultData['plot'] }}</p>
+
+      <p>등장인물 </p>
+      <p>
+        {% for i in range(8) %}
+          {{actor[i]['role_name']}} : {{actor[i]['actor_name']}},
+        {% endfor %}
+      <p/>
+
+    </div>
+
+    <!-- bottom container 아래쪽 하단 드라마 분석 부분 -->
+    <!--<div style=" margin-top: 50px; margin-left:150px; margin-right:200px ;border:1px soild #bcbcbc; border-radius: 5px; width: px; ; margin:0 auto ">
+    -->
+    <div style="position:relative; margin-top: 80px; width:100%; height:1000px; border:3px solid #bcbcbc; border-radius: 5px">
+      <!-- 드라마 분석중 왼쪽 위 ( 댓글 예시 ) -->
+      <div style=" position:absolute ; top : 3% ; width: 45% ; height: 40%; margin-left:35px;  border: 3px soild #bcbcbc ; ">
+        <center>예시 댓글 모음</center>
+        {% for i in range(10) %}
+        <li> {{chat[i]}} </li>
+        <div style="font-size: small;">{{predict[i]}}</div>
+        {% endfor %}
+
+        <div> 총 정확도는 : <h1>{{sum}}%</h1> </div>
+      </div>
+
+      <!-- 드라마 분석중 오른쪽 위 ( wordcloud )-->
+      <div style=" position:absolute ; top: 3% ; left:50% ;  width:45% ; height: 40%; border:3px soild #bcbcbc;  ">
+        <center>워드 클라우드 자리 ( 예시 )</center>
+        <img src="./static/wordcloud/wordcloud_12.png" width="480" height="360">
+
+
+      </div >
+
+      <!-- 드라마 분석중 아래 (그래프 , 평점)-->
+      <div style="position:absolute ; top: 50%; left: 50%; width: 94% ; height: 45%;  border:3px soild #bcbcbc ; ">
+        <center>평가판 </center>
+
+        <p>긍정 댓글 : {{pos}}%</p>
+        <p>부정 댓글 : {{neg}}%</p>
+        <p>총 정확도 {{sum}}% </p>
+
+        <div style="display: inline-block; width:300px ; height:300px ; background: conic-gradient(#8b22ff 0% {{pos}}%, #ffc33b {{neg}}% 100%); border-radius: 50%;">
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

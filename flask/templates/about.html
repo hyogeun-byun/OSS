@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
 
 
 </head>
@@ -35,23 +36,30 @@
     <hr>
   </header>
 
-
-  <div style=" margin-top:100px ; margin-bottom:50px">
+  <center>
+    <div style="font-family: 'Jua' , serif ; font-size: xx-large; margin-top: 50px;">핵심기술<br /> html,css / python 웹크롤링,
+      딥러닝 / flask, mariaDB </div>
+  </center>
+  <div style=" margin-top:30px ; margin-bottom:50px">
     <center>
-      <img src="{{ url_for('static', filename='css/mango.jpg') }}"
-        style="width:300px ; height:300px ; border-radius:150px; margin-right: 20px" />
-      <img src="{{ url_for('static', filename='css/mango.jpg') }}"
-        style="width:300px ; height:300px ; border-radius:150px; margin-right: 20px" />
-      <img src="{{ url_for('static', filename='css/mango.jpg') }}"
-        style="width:300px ; height:300px ; border-radius:150px" />
+      <img src="{{ url_for('static', filename='css/html_css3.png') }}"
+        style="width:300px ; height:300px ; border-radius:150px; margin-right: 20px ; " />
+      <img src="{{ url_for('static', filename='css/python_logo2.jpg') }}"
+        style="width:300px ; height:300px ; border-radius:150px; margin-right: 20px ; " />
+      <img src="{{ url_for('static', filename='css/flask.png') }}"
+        style="width:300px ; height:300px ; border-radius:150px ; " />
     </center>
   </div>
 
-  <center style="font-size: 25px">
-    <p style="font-family: 'Oswald' , serif;">팀:Findrama</p>
-    <p>변효근 : 조장 , flask , db , 총괄진행 , 대빵</p>
-    <p>이준규 : 조원1, flask, front작업 , 기획 총괄 , 꼰대</p>
-    <p>이정은 : 조원2, 크롤링, DB전문가, 사실상 보스, 막내</p>
+
+  <center style="font-size: 25px ">
+    <p style="font-family: 'Oswald' , serif; ">
+    <div style="font-family: 'Jua' , serif ; display:inline">팀</div>:Findrama</p>
+    <div style="font-family: 'Jua' , serif ;">
+      <p>변효근 : flask, 딥러닝</p>
+      <p>이준규 : flask, front작업</p>
+      <p>이정은 : 웹 크롤링, DB작업</p>
+    </div>
   </center>
 </body>
 
