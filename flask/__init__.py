@@ -3,22 +3,25 @@ import pymysql
 
 
 class Database():
-    def __init__(self):
+    # DB 연결
+    def __init__(self):           
         self.db = pymysql.connect(host='localhost',
                                   user='findrama',
                                   password='findrama',
                                   db='findrama',
                                   charset='utf8')
         self.cursor = self.db.cursor(pymysql.cursors.DictCursor)
-
+    
+    # sql문 실행
     def execute(self, query, args={}):
         self.cursor.execute(query, args)
-
+        
+    # sql문 실행하여 1개의 tuple fetch
     def executeOne(self, query, args={}):
         self.cursor.execute(query, args)
         row = self.cursor.fetchone()
         return row
-
+    # sql문 실행하여 전체 tuple fetch
     def executeAll(self, query, args={}):
         self.cursor.execute(query, args)
         row = self.cursor.fetchall()
@@ -41,8 +44,8 @@ def home():
 
     return render_template('home.html', resultData=row)
 
+# 각 드라마 별로 DB 연결
 
-# 여기부터 추가
 @app.route('/이미테이션')
 def info_0():
     db_class = Database()
@@ -68,6 +71,7 @@ def info_1():
     actors = db_class.executeAll(sql_actor)
 
     return render_template('멸망.html', resultData=row[0], actor = actors)
+
 @app.route('/오월의청춘')
 def info_2():
     db_class = Database()
