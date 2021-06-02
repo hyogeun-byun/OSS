@@ -9,15 +9,15 @@ class Database():
                                   charset='utf8')
         self.cursor = self.db.cursor(pymysql.cursors.DictCursor)
 
-    def execute(self, query, args={}):                          # sql문 실행
+    def execute(self, query, args={}):                          # sql문 실행 execute(sql)
         self.cursor.execute(query, args)
 
-    def executeOne(self, query, args={}):                       # 하나의 tuple fectch
+    def executeOne(self, query, args={}):                       # 하나의 tuple fectch   executeOne(sql)
         self.cursor.execute(query, args)
         row = self.cursor.fetchone()
         return row
 
-    def executeAll(self, query, args={}):                       # 전체 tuple fectch
+    def executeAll(self, query, args={}):                       # 전체 tuple fectch   executeAll(sql)
         self.cursor.execute(query, args)
         row = self.cursor.fetchall()
         return row
