@@ -29,21 +29,20 @@
 <br/>
 
 ```
-Total
+OpenSourceProject-Final
 ├─__pycache__  
-│  ├─oss_database.cpython-37.pyc
+│  ├─oss_database.cpython-37.pyc 
 │  └─oss_predict.cpython-37.pyc
 ├─templates 
 │  ├─Static
-│    ├─ css
-│    └─ wordcloud
-│  └─ html....
+│    ├─ css  ( 페이지의 css 파일 )
+│    └─ wordcloud  ( wordCloud 이미지 )
+│  └─ html....   ( 페이지 목록 )
 │
-├─__init__.py
-├─ oss.h5
-├─ oss_database.py
-├─ oss_predict.py
-└─ oss_wordcloud.py
+├─__init__.py   ( flask 연동 파일 )
+├─ best_model.h5    ( 머신러닝 모델 파일 )
+├─ oss_database.py  ( 데이터베이스 파일 )
+└─ oss_predict.py   ( 데이터 예측 및 wordCloud 파일 ) 
 ```
 <br/>
 
