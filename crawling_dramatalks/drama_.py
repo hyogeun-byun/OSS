@@ -8,8 +8,8 @@ drama_chanel = ['kbs','cjenm','kbs','jtbc','kbs','sbs','cjenm','jtbc','kbs','cje
 idx = 0
 
 while idx < len(drama_list) :
-    info.search_info_to_db(idx,drama_list[idx])
-    talks.search_talks_into_db(idx, drama_chanel[idx], drama_list_talk[idx])
+    info.search_info_to_db(idx,drama_list[idx])  # 드라마 기본 정보 저장
+    talks.search_talks_into_db(idx, drama_chanel[idx], drama_list_talk[idx]) # 드라마 댓글 저장
     idx = idx + 1
 
 
